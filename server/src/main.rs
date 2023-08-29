@@ -9,6 +9,11 @@ fn main() {
     // dbg!(&string_borrow);
     // dbg!(&string_literal);
 
+    // let get = Method::GET("abcd".to_string());
+    // let post = Method::POST;
+    // let delete = Method::DELETE(123);
+    // let put = Method::PUT;
+
     let server = Server::new("127.0.0.1:8080".to_string());
     server.run();
 }
@@ -31,3 +36,22 @@ impl Server {
         println!("Listening on {}", self.addr);
     }
 }
+
+struct Request{
+    path: String,
+    query_string: Option<String>,
+    method: Method
+}
+
+enum Method{
+    GET,
+    POST,
+    PUT,
+    HEAD,
+    DELETE,
+    PATCH,
+    OPTIONS,
+    CONNECT,
+    TRACE
+}
+
