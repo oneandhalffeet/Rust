@@ -1,3 +1,10 @@
+use server::Server;
+use http::Method;
+
+mod server;
+mod http;
+
+
 fn main() {
     // let string = String::from("😀😃😄😁😆😅");
     // let string_port = &string[12..];
@@ -18,40 +25,6 @@ fn main() {
     server.run();
 }
 
-struct Server{
-    addr: String,
-
-}
 
 
-// Adding implementation for Server struct
-impl Server {
-    fn new(addr: String) -> Self{
-        Self {
-            addr
-        }
-    }
-
-    fn run(self){
-        println!("Listening on {}", self.addr);
-    }
-}
-
-struct Request{
-    path: String,
-    query_string: Option<String>,
-    method: Method
-}
-
-enum Method{
-    GET,
-    POST,
-    PUT,
-    HEAD,
-    DELETE,
-    PATCH,
-    OPTIONS,
-    CONNECT,
-    TRACE
-}
 
