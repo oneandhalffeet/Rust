@@ -1,13 +1,11 @@
-pub mod method{
-    pub enum Method{
-        GET,
-        POST,
-        PUT,
-        HEAD,
-        DELETE,
-        PATCH,
-        OPTIONS,
-        CONNECT,
-        TRACE
-    }
+pub enum Method{
+    GET,
+    POST,
+    PUT,
+    HEAD,
+    DELETE,
+    PATCH,
+    OPTIONS,
+    CONNECT,
+    TRACE
 }
